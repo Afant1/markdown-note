@@ -79,7 +79,7 @@ git reset --hard 99a6a92`
 	本地开发完提交代码到github
 	git remote add origin https://github.com/kang-rui/gitrepo.git //关联一个远程库
 	git remote -v //查看关联远程库的详细信息
-	git push origin master //要求输入账号密码
+	git push -u origin master //(第一次使用-u以后不用)把当前master推送到远程，要求输入账号密码.
 	在本地建立test分支，提交test分支到github上
 	git branch test //建立test分支
 	git checkout test //切换分支
