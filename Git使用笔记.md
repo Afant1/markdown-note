@@ -45,7 +45,7 @@ git reset hard 99a6a92`
 ### 12.删除分支
 `git branch d dev`
 ### 13.查看文件修改
-`git diff xxx` 具体内容在百度
+`git diff master` 查看与master分支的内容
 ### 14.删除远程仓库的文件或目录
 
     git rm -r --cached a/2.txt //删除a目录下的2.txt文件 
@@ -55,7 +55,9 @@ git reset hard 99a6a92`
 
 > **Note:**
 用r参数删除目录, git rm cached a.txt 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm a.txt
-### 14.解决冲突
+### 15.每次开发时更新代码
+`git pull`
+### 16.解决冲突
 > 什么时候能够产生冲突？一般在一个分支下增加1.txt，在主分支也在1.txt文件更新了代码。当主分支合并这个分支的时候就会产生冲突。
 
     git checkout b fenzhi1 //建立一个分支
