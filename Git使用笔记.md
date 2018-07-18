@@ -33,7 +33,7 @@ git reset hard 3df24605fea5dc8151325761723769a2c25d2878;`
 `git reflog;
 git reset hard 99a6a92`
 ### 8. 创建+切换分支
-`git checkout b dev`
+`git checkout -b dev`
 > 在dev分支进行开发;git add;git commit 后不影响master分支。git merge dev合并分支。主分支就会与dev合并
 
 ### 9. 查看当前分支
@@ -43,9 +43,9 @@ git reset hard 99a6a92`
 ### 11.合并某分支到当前分支
 `git merge dev`
 ### 12.删除分支
-`git branch d dev`
+`git branch -d dev`
 ### 13.查看文件修改
-`git diff master` 查看与master分支的内容
+`git diff xxx` 具体内容在百度
 ### 14.删除远程仓库的文件或目录
 
     git rm -r --cached a/2.txt //删除a目录下的2.txt文件 
@@ -55,9 +55,16 @@ git reset hard 99a6a92`
 
 > **Note:**
 用r参数删除目录, git rm cached a.txt 删除的是本地仓库中的文件，且本地工作区的文件会保留且不再与远程仓库发生跟踪关系，如果本地仓库中的文件也要删除则用git rm a.txt
-### 15.每次开发时更新代码
-`git pull`
-### 16.解决冲突
+### 15.更新本地代码
+ `git pull`
+###  16.当你修改了本地代码又不想要了
+`git checkout 文件名` 从服务器重新迁出代码
+### 17.提交所有代码
+`git add .
+git commit -a -m "注释"
+git push //提交代码到服务器
+`
+### 17.解决冲突
 > 什么时候能够产生冲突？一般在一个分支下增加1.txt，在主分支也在1.txt文件更新了代码。当主分支合并这个分支的时候就会产生冲突。
 
     git checkout b fenzhi1 //建立一个分支
@@ -80,6 +87,14 @@ git reset hard 99a6a92`
 	>>>>>>>fenzhi1
 	git add readme.txt 
 	git commit m "conflict fixed" //解决冲突
+> 另一种解决办法
+
+    git pull  //拉取代码时，会产生冲突。
+    git stash //把本地的代码存放到git栈中
+    git pull  //这样就能把远程的代码拉下来了
+    git stash pop //把栈中的代码弹出来，就会产生冲突
+    解决冲突提交代码
+
 ### 多人协作开发
 > 当你从远程库克隆时候，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程库的默认名称是origin。
 
